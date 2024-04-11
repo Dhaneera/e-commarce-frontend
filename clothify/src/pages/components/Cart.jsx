@@ -29,9 +29,9 @@ const Cart = () => {
         //         <button  type="button " className="flex ml-[10%] w-[200px] text-gray-900 bg-white border hover:text-white border-gray-300 focus:outline-none hover:bg-black focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-white dark:hover:text-black dark:hover:border-gray-600 dark:focus:ring-gray-700 mt-6 " >CHECK OUT</button>
         //     </div>
         // </div>
-        <div className=' ov overflow-auto'>
-            <div className='border  scrollbar scrollbar-thumb-red-500 flex-inline mt-[2%]  bg-[#FFFFF5] w-[33%]  ml-[60%] p-8 rounded-t-3xl h-[100vh]  overflow-scroll' >
-                <h1 className=' ml-2 font-mulish font-extrabold tracking-widest text-2xl'>SHOPPING CART </h1>
+        <div className='  overflow-auto'>
+            <div className=' bg-[#FFFFF5] w-[33%]  ml-[60%] p-8 mt-[3%] rounded-t-3xl border-t-2 border-r-2 border-l-2'><h1 className='font-mulish font-extrabold tracking-widest text-2xl mt-6rounded-t-3xl '>SHOPPING CART </h1></div>
+            <div className='  scrollbar scrollbar-thumb-red flex-inline   bg-[#FFFFF5] w-[33%]  ml-[60%] p-8 h-[60vh]  overflow-scroll border-r-2 border-l-2' >
                 <div className='flex '>
                     <div className=' mt-[5%] ml-3'>
                         <img src={cartImg} alt="product" className='mt-4 object-cover w-[28%]' />
@@ -194,7 +194,7 @@ const Cart = () => {
                 </div>
                 
             </div>
-            <div className='   bg-[#E5E5B6] w-[33%]  ml-[60%]  p-10 rounded-b-2xl '>
+            <div className='   bg-[#E5E5B6] w-[33%]  ml-[60%]  p-10 rounded-b-2xl border-r-2 border-l-2 '>
                 <span className=' font-mulish text-3xl font-thin ml-12'>Total</span>
                 <span className='ml-[50%] text-l font-bold'>LKR 10500.00</span>
                 <button  type="button " className=" mb-8  flex pl-[22%] w-[280px] mt-[10%] text-gray-900 bg-white  hover:text-white border-gray-300 focus:outline-none hover:bg-black focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-white dark:hover:text-black dark:hover:border-gray-600 dark:focus:ring-gray-700 ml-[20%] " >CHECK OUT</button>
