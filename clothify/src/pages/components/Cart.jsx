@@ -5,203 +5,101 @@ import bin from'../../../public/bin.png'
 
 const Cart = () => {
     return(
-        // <div className='font font-mulish  ml-[5%] bg-[#FFFFF5] pl-[40%]' >
-        //     <h1 className=' font-mulish m-[4%] ml-[5%] font-extrabold tracking-widest text-3xl mt-19'>SHOPPING CART </h1>
-        //     <div className='flex'>
-        //     <div className="left-side flex">
-        //         <img src={cartImg} alt="product" className='ml-[10%]' />
-        //     </div>
-        //     <div className="right-side ml-[8%]">
-        //     <span className=' font-mulish text-lg  font-extralight from-neutral-400 '>CLOTHIFY</span>
-        //     <div className='flex'>
-        //         <h2 className='text text-base l mt-3 tracking-wid'>Yellow Sweat shirt</h2>
-        //         <span className='ml-12 mt-3 font-mulish font-bold'>LKR 3500.00</span>
-        //     </div>
-            
-        //     <div className='inline-flex mt-7 justify-center'>
-        //        
-        //     </div>
-            
-        //     </div>
-        //     </div>
-        //         <div className='mt-[30%] ml-[2%] bg-[#E5E5B6]'>
-                
-        //         <button  type="button " className="flex ml-[10%] w-[200px] text-gray-900 bg-white border hover:text-white border-gray-300 focus:outline-none hover:bg-black focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-white dark:hover:text-black dark:hover:border-gray-600 dark:focus:ring-gray-700 mt-6 " >CHECK OUT</button>
-        //     </div>
-        // </div>
-        <div className='  overflow-auto'>
-            <div className=' bg-[#FFFFF5] w-[33%]  ml-[60%] p-8 mt-[3%] rounded-t-3xl border-t-2 border-r-2 border-l-2'><h1 className='font-mulish font-extrabold tracking-widest text-2xl mt-6rounded-t-3xl '>SHOPPING CART </h1></div>
-            <div className='  scrollbar scrollbar-thumb-red flex-inline   bg-[#FFFFF5] w-[33%]  ml-[60%] p-8 h-[60vh]  overflow-scroll border-r-2 border-l-2' >
-                <div className='flex '>
-                    <div className=' mt-[5%] ml-3'>
-                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[28%]' />
-                    </div>
-                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
-                        <div className='flex'>
-                            <h2 className=' mt-3   tracking-wide font-mulish text-l size 20'>Yellow Sweatshirt</h2>
-                            <span className='ml-[50%] mt-4 font-mulish font-bold'> 3500.00</span>
-                            <span className='mt-[20%] ml-[-127%] font-mulish font-light text-sm'>xs/Black</span>
-                        </div>
-                        
-                        <div className='flex  mt-[43%] ml-[-106%]'>
-                            <img src={min} alt="" className='size-[38%] items-center' />
-                            <input type="number" name="number_cloths "className="h-[14px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
-                            <img src={max} alt="" className='size-[38%] ml-[-4%]'/>
-                            <img src={bin} alt=''className='size-[50%] mt-[-2%]' />
-                        </div>
-                    </div>
-                    
-                </div>
-                <div className='flex'>
-                    <div className=' mt-[5%] ml-3'>
-                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[28%]' />
-                    </div>
-                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
-                        <div className='flex'>
-                            <h2 className=' mt-3   tracking-wide font-mulish text-l size 20 '>Yellow Sweatshirt</h2>
-                            <span className='ml-[50%] mt-4 font-mulish font-bold'> 3500.00</span>
-                            <span className='mt-[20%] ml-[-127%] font-mulish font-light text-sm'>xs/Black</span>
-                        </div>
-                        
-                        <div className='flex  mt-[43%] ml-[-106%]'>
-                            <img src={min} alt="" className='size-[38%] items-center' />
-                            <input type="number" name="number_cloths "className="h-[14px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
-                            <img src={max} alt="" className='size-[38%] ml-[-4%]'/>
-                            <img src={bin} alt=''className='size-[50%] mt-[-2%]' />
-                        </div>
-                    </div>
-                    
-                </div>
-                <div className='flex'>
-                    <div className=' mt-[5%] ml-3'>
-                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[28%]' />
-                    </div>
-                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
-                        <div className='flex'>
-                            <h2 className=' mt-3   tracking-wide font-mulish text-l size 20 '>Yellow Sweatshirt</h2>
-                            <span className='ml-[50%] mt-4 font-mulish font-bold'> 3500.00</span>
-                            <span className='mt-[20%] ml-[-127%] font-mulish font-light text-sm'>xs/Black</span>
-                        </div>
-                        
-                        <div className='flex  mt-[43%] ml-[-106%]'>
-                            <img src={min} alt="" className='size-[38%] items-center' />
-                            <input type="number" name="number_cloths "className="h-[14px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
-                            <img src={max} alt="" className='size-[38%] ml-[-4%]'/>
-                            <img src={bin} alt=''className='size-[50%] mt-[-2%]' />
-                        </div>
-                    </div>
-                    
-                </div>
-                <div className='flex'>
-                    <div className=' mt-[5%] ml-3'>
-                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[28%]' />
-                    </div>
-                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
-                        <div className='flex'>
-                            <h2 className=' mt-3   tracking-wide font-mulish text-l size 20 '>Yellow Sweatshirt</h2>
-                            <span className='ml-[50%] mt-4 font-mulish font-bold'> 3500.00</span>
-                            <span className='mt-[20%] ml-[-127%] font-mulish font-light text-sm'>xs/Black</span>
-                        </div>
-                        
-                        <div className='flex  mt-[43%] ml-[-106%]'>
-                            <img src={min} alt="" className='size-[38%] items-center' />
-                            <input type="number" name="number_cloths "className="h-[14px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
-                            <img src={max} alt="" className='size-[38%] ml-[-4%]'/>
-                            <img src={bin} alt=''className='size-[50%] mt-[-2%]' />
-                        </div>
-                    </div>
-                    
-                </div>
-                <div className='flex'>
-                    <div className=' mt-[5%] ml-3'>
-                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[28%]' />
-                    </div>
-                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
-                        <div className='flex'>
-                            <h2 className=' mt-3   tracking-wide font-mulish text-l size 20 '>Yellow Sweatshirt</h2>
-                            <span className='ml-[50%] mt-4 font-mulish font-bold'> 3500.00</span>
-                            <span className='mt-[20%] ml-[-127%] font-mulish font-light text-sm'>xs/Black</span>
-                        </div>
-                        
-                        <div className='flex  mt-[43%] ml-[-106%]'>
-                            <img src={min} alt="" className='size-[38%] items-center' />
-                            <input type="number" name="number_cloths "className="h-[14px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
-                            <img src={max} alt="" className='size-[38%] ml-[-4%]'/>
-                            <img src={bin} alt=''className='size-[50%] mt-[-2%]' />
-                        </div>
-                    </div>
-                    
-                </div>
-                <div className='flex'>
-                    <div className=' mt-[5%] ml-3'>
-                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[28%]' />
-                    </div>
-                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
-                        <div className='flex'>
-                            <h2 className=' mt-3   tracking-wide font-mulish text-l size 20 '>Yellow Sweatshirt</h2>
-                            <span className='ml-[50%] mt-4 font-mulish font-bold'> 3500.00</span>
-                            <span className='mt-[20%] ml-[-127%] font-mulish font-light text-sm'>xs/Black</span>
-                        </div>
-                        
-                        <div className='flex  mt-[43%] ml-[-106%]'>
-                            <img src={min} alt="" className='size-[38%] items-center' />
-                            <input type="number" name="number_cloths "className="h-[14px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
-                            <img src={max} alt="" className='size-[38%] ml-[-4%]'/>
-                            <img src={bin} alt=''className='size-[50%] mt-[-2%]' />
-                        </div>
-                    </div>
-                    
-                </div>
-                <div className='flex'>
-                    <div className=' mt-[5%] ml-3'>
-                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[28%]' />
-                    </div>
-                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
-                        <div className='flex'>
-                            <h2 className=' mt-3   tracking-wide font-mulish text-l size 20 '>Yellow Sweatshirt</h2>
-                            <span className='ml-[50%] mt-4 font-mulish font-bold'> 3500.00</span>
-                            <span className='mt-[20%] ml-[-127%] font-mulish font-light text-sm'>xs/Black</span>
-                        </div>
-                        
-                        <div className='flex  mt-[43%] ml-[-106%]'>
-                            <img src={min} alt="" className='size-[38%] items-center' />
-                            <input type="number" name="number_cloths "className="h-[14px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
-                            <img src={max} alt="" className='size-[38%] ml-[-4%]'/>
-                            <img src={bin} alt=''className='size-[50%] mt-[-2%]' />
-                        </div>
-                    </div>
-                    
-                </div>
-                <div className='flex'>
-                    <div className=' mt-[5%] ml-3'>
-                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[28%]' />
-                    </div>
-                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
-                        <div className='flex'>
-                            <h2 className=' mt-3   tracking-wide font-mulish text-l size 20 '>Yellow Sweatshirt</h2>
-                            <span className='ml-[50%] mt-4 font-mulish font-bold'> 3500.00</span>
-                            <span className='mt-[20%] ml-[-127%] font-mulish font-light text-sm'>xs/Black</span>
-                        </div>
-                        
-                        <div className='flex  mt-[43%] ml-[-106%]'>
-                            <img src={min} alt="" className='size-[38%] items-center' />
-                            <input type="number" name="number_cloths "className="h-[14px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
-                            <img src={max} alt="" className='size-[38%] ml-[-4%]'/>
-                            <img src={bin} alt=''className='size-[50%] mt-[-2%]' />
-                        </div>
-                    </div>
-                    
-                </div>
-                
+        <div className='  overflow-auto '>
+            <div className='fixed ml-[60%] bg-[#FFFFF5] w-[33%] mt-8 h-20 border-t-2 border-l-2 border-r-2 rounded-t-3xl  xl:w-[40%] xl:ml-[48%] lg:w-[40%] lg:ml-[50%] '  >
+                    <h1 className=' m-6 ml-9 font-mulish font-extrabold tracking-widest text-2xl'>SHOPPING CART </h1>
             </div>
-            <div className='   bg-[#E5E5B6] w-[33%]  ml-[60%]  p-10 rounded-b-2xl border-r-2 border-l-2 '>
-                <span className=' font-mulish text-3xl font-thin ml-12'>Total</span>
-                <span className='ml-[50%] text-l font-bold'>LKR 10500.00</span>
-                <button  type="button " className=" mb-8  flex pl-[22%] w-[280px] mt-[10%] text-gray-900 bg-white  hover:text-white border-gray-300 focus:outline-none hover:bg-black focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-white dark:hover:text-black dark:hover:border-gray-600 dark:focus:ring-gray-700 ml-[20%] " >CHECK OUT</button>
-                <span className='text font-mulish  font-extralight text-sm ml-[18%] text-slate-400'>shipping cost and Taxes calculated on checkout</span>
+            <div className=' border-l-2 border-r-2  scrollbar-thin  flex-inline mt-[4rem]  bg-[#FFFFF5] w-[33%]  ml-[60%] p-8  h-[30vh]  overflow-scroll xl:w-[40%] xl:ml-[48%] lg:ml-[50%] lg:w-[40%] ' >
+                <div className='flex  overflow-auto '>
+                    <div className=' mt-[5%] ml-3   '>
+                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[8rem] 2xl:w-[40%] xl:w-[7rem] lg:w-[6rem]' />
+                    </div>
+                    <div className='mt-[9%] w-[50%] ml-[-45%] flex '>
+                        <div className='flex ml-[15rem]  2xl:ml-[20%] xl:ml-[14.3rem] lg:ml-[11.2rem] '>
+                            <h2 className=' mt-3  tracking-wide font-mulish text-l size-[3rem] font-bold'>Yellow Sweatshirt</h2>
+                            <span className='ml-[6rem] mt-4 font-mulish font-bold 2xl:ml-[10rem]'> 3500.00</span>
+                            <span className='mt-[5rem]  font-mulish text-sm ml-[-17.7rem] font-thin 2xl:ml-[-21.8rem] lg:ml-[-13rem]'>xs/Black</span>
+                        </div>
+
+                        <div className='flex  mt-[43%] ml-[-110%]'>
+                            {/* <img src={min} alt="" className='size-[20%] items-center' />
+                            <input type="number" name="number_cloths "className="h-[15px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
+                            <img src={max} alt="" className='size-[20%] ml-[-4%]'/>
+                            <img src={bin} alt=''className='size-[25%] mt-[-2%]' /> */}
+                        </div>
+                    </div>
+
+                </div>
+                <div className='flex  overflow-auto'>
+                    <div className=' mt-[5%] ml-3'>
+                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[8rem]' />
+                    </div>
+                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
+                        <div className='flex ml-[15rem] '>
+                            <h2 className=' mt-3  tracking-wide font-mulish text-l size-[8rem] font-bold'>Yellow Sweatshirt</h2>
+                            <span className='ml-[6rem] mt-4 font-mulish font-bold'> 3500.00</span>
+                            <span className='mt-[5rem]  font-mulish text-sm ml-[-17.7rem] font-thin'>xs/Black</span>
+                        </div>
+
+                        <div className='flex  mt-[43%] ml-[-110%]'>
+                            {/* <img src={min} alt="" className='size-[20%] items-center' />
+                            <input type="number" name="number_cloths "className="h-[15px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
+                            <img src={max} alt="" className='size-[20%] ml-[-4%]'/>
+                            <img src={bin} alt=''className='size-[25%] mt-[-2%]' /> */}
+                        </div>
+                    </div>
+
+                </div>
+                <div className='flex  overflow-auto'>
+                    <div className=' mt-[5%] ml-3'>
+                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[8rem]' />
+                    </div>
+                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
+                        <div className='flex ml-[15rem] '>
+                            <h2 className=' mt-3  tracking-wide font-mulish text-l size-[8rem] font-bold'>Yellow Sweatshirt</h2>
+                            <span className='ml-[6rem] mt-4 font-mulish font-bold'> 3500.00</span>
+                            <span className='mt-[5rem]  font-mulish text-sm ml-[-17.7rem] font-thin'>xs/Black</span>
+                        </div>
+
+                        <div className='flex  mt-[43%] ml-[-110%]'>
+                            {/* <img src={min} alt="" className='size-[20%] items-center' />
+                            <input type="number" name="number_cloths "className="h-[15px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
+                            <img src={max} alt="" className='size-[20%] ml-[-4%]'/>
+                            <img src={bin} alt=''className='size-[25%] mt-[-2%]' /> */}
+                        </div>
+                    </div>
+
+                </div>
+                <div className='flex  overflow-auto'>
+                    <div className=' mt-[5%] ml-3'>
+                        <img src={cartImg} alt="product" className='mt-4 object-cover w-[8rem]' />
+                    </div>
+                    <div className='mt-[9%] w-[50%] ml-[-45%] flex'>
+                        <div className='flex ml-[15rem] '>
+                            <h2 className=' mt-3  tracking-wide font-mulish text-l size-[8rem] font-bold'>Yellow Sweatshirt</h2>
+                            <span className='ml-[6rem] mt-4 font-mulish font-bold'> 3500.00</span>
+                            <span className='mt-[5rem]  font-mulish text-sm ml-[-17.7rem] font-thin'>xs/Black</span>
+                        </div>
+
+                        <div className='flex  mt-[43%] ml-[-110%]'>
+                            {/* <img src={min} alt="" className='size-[20%] items-center' />
+                            <input type="number" name="number_cloths "className="h-[15px] w-[45px] pl-6 bg-black ml-1 mr-2  " />
+                            <img src={max} alt="" className='size-[20%] ml-[-4%]'/>
+                            <img src={bin} alt=''className='size-[25%] mt-[-2%]' /> */}
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div className='   bg-[#E5E5B6] w-[33%]  ml-[60%]  p-10 rounded-b-2xl  xl:w-[40%] xl:ml-[48%] lg:ml-[50%] lg:w-[40%] '>
+                <span className=' font-mulish text-xl font-thin ml-12 2xl:ml-[3%] xl:ml-4 lg:ml-[2%]'>Total</span>
+                <span className='ml-[50%] text-base font-bold 2xl:ml-[63%] xl:ml-[14.8rem] lg:ml-[10.58rem]'>LKR 10500.00</span>
+                <button  type="button " className="   flex pl-[22%] w-[220px] mt-[10%] text-gray-900 bg-white  hover:text-white border-gray-300 focus:outline-none hover:bg-black focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-white dark:hover:text-black dark:hover:border-gray-600 dark:focus:ring-gray-700 ml-[20%]  2xl:ml-[22%] lg:ml-[3.5rem]" >CHECK OUT</button>
+                <span className='text font-mulish  font-extralight text-xs ml-[18%] text-slate-400 2xl:ml-[22%] lg:ml-[3rem]'>shipping cost and Taxes calculated on checkout</span>
             </div>
         </div>
-        
+
     )
 }
 export default Cart
