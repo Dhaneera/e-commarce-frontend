@@ -23,14 +23,14 @@ import bento_m2 from '../assets/m2.png'
 import bento_m3 from '../assets/m3.png'
 import bento_m4 from '../assets/m4.png'
 import bento_m5 from '../assets/m5.png'
-import men_m1 from '../assets/c1.png'
-import women_m1 from '../assets/c2.png'
-import teens_m1 from '../assets/c3.png'
-import kids_m1 from '../assets/c4.png'
 import summer_m from '../assets/summer-m.png'
 import winter_m from '../assets/winter-m.png'
-import autumn_m from '../assets/autumn-m.png'
+import autumn_m from '../assets/autumn-mobile.png'
 import spring_m from '../assets/spring-m.png'
+import men_mobile from '../assets/c1.png'
+import women_mobile from '../assets/c2.png'
+import teens_mobile from '../assets/c3.png'
+import kids_mobile from '../assets/c4.png'
 
 export default function Home() {
     return (
@@ -66,17 +66,17 @@ export default function Home() {
                 <div className="  w-screen  mt-20   ">
                     <img className="ml-0 p-0 w-screen mr-[-2%]" src={category} alt="" />
                 </div>
-                <div className="flex mt-7 ml-[2%] mr-[1%] w-[80%]  justify-center gap-5 ssm:hidden">
-                    <img className="size-[20%]" src={men} alt="" />
+                <div className="flex mt-7 ml-[2%] mr-[1%] w-[100%]  justify-center gap-5 ssm:hidden">
+                    <img className="size-[20%] " src={men} alt="" />
                     <img className="size-[20%] object-cover" src={women} alt="" />
                     <img className="size-[20%]" src={teen} alt="" />
                     <img className="size-[20%]" src={kids} alt="" />
                 </div>
-                <div className=" flex flex-col items-center 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden ssm:mt-6 pl-5  ">
-                    <img className="w-[89%]" src={men_m1} alt="" />
-                    <img className="w-[93%] ml-3" src={women_m1} alt="" />
-                    <img className="w-[90%]" src={teens_m1} alt="" />
-                    <img className="w-[89%]" src={kids_m1} alt="" />
+                <div className="mt-5 flex flex-col items-center ml-3 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden">
+                    <img src={men_mobile} alt="" />
+                    <img src={women_mobile} alt="" />
+                    <img src={teens_mobile} alt="" />
+                    <img src={kids_mobile} alt="" />
                 </div>
                 <div className="  w-screen mt-10   ">
                     <img className="ml-0 p-0 w-screen mr-[-2%]" src={season} alt="" />
@@ -87,10 +87,10 @@ export default function Home() {
                     <img className="mt-[-14%] xl:mt-[-6%]  xl:h-[82.3%] lg:h-[81%] w-[100%] lg:mt-[-6%] md:h-[72%] md:mt-[-2%] sm:h-[80%] sm:mt-[0] " src={autumn}  alt="" />
                     <img className=" pr-12 sm:mt-[-4%] sm:h-[83%] " src={spring} alt="" />
                 </div>
-                <div className=" 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden flex flex-col items-center mt-5 pl-7">
+                <div className=" 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden flex flex-col items-center mt-5 pl-5 pr-3">
                     <img className="pl-1" src={summer_m} alt="" />
                     <img className="pl-1" src={winter_m} alt="" />
-                    <img className="ml-2 " src={autumn_m} alt="" />
+                    <img className="ml-1" src={autumn_m} alt="" />
                     <img className="pl-1" src={spring_m} alt="" />
                 </div>
                 <div className="w-screen mt-10">
