@@ -42,7 +42,7 @@ const ProductSelection = () => {
 
                     <div className='flex flex-col max-lg:w-[10%] border-8 border-white'>
                         <div className='flex flex-col gap-5 p-7 border 4 border-red-500 items-center '>
-                            <h2 className='s  w-[100%]  ml-[10%] text-4xl font-semibold font-mulish mt-[6%] lg:text-4xl md:pl-24 md:ml-10'  >Yellow Sweat shirt  </h2>
+                            <h2 className='s  w-[100%]  ml-[10%] text-4xl font-semibold font-mulish mt-[6%] lg:text-4xl md:pl-24 md:ml-10 xl:pl-32'   >Yellow Sweat shirt  </h2>
                             <h2 className="mt-[10%] mb-9 ml-[10%] font-semibold underline  tracking-wider text-2xl lg:text-xl border 8 md mr-10 ">Product Description</h2>
                             <div className='border 4 border-green-500 lg:tracking-wider lg:h-60 lg:ml-[-1.3rem] lg:mr-[-1.4rem]'>
                                 <p className="ml-[10%] font-mulish tracking-wider font-extralight text-lg mr-28 lg:text-[1.09rem] md:pl-5 md:text-[1rem]">THIS PRODUCT OFFERS LUXURIOUS, BRUSHED SURFACE SILICONE WASH AND GIVES A PLUSH, AND VELVETY HAND FEEL.ITS MADE WITH 100% FRENCH
