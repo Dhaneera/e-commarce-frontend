@@ -1,18 +1,20 @@
 import { useState } from 'react'
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import Error from './pages/Error'
 import ProductSelectionPage from './pages/ProductSelection'
 import Cart from './pages/components/Cart'
-import Footer from './pages/components/Footer'
 import SubCategory from './pages/SubCategory'
+
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
+    
       <BrowserRouter>
       <Routes>
         <Route path='/'element={<Login/>}></Route>
@@ -27,4 +29,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

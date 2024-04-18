@@ -32,25 +32,31 @@ import women_mobile from '../assets/c2.png'
 import teens_mobile from '../assets/c3.png'
 import kids_mobile from '../assets/c4.png'
 import Footer from "./components/Footer";
+import {motion} from 'framer-motion'
 
 export default function Home() {
+
+    const[rotate,setRotate]=React.useState(false);
+
     return (
         <div className="flex flex-col">
             <div>
                 <Header />
             </div>
-            <main className=" p- pl-0  m-5 ">
-                <div className=" pl-12   ml-[1%] mr-[0%] pb-8  ssm:w-[118%] ssm:ml-[-12%] ">
+            <motion.main animate={{scale:1}} transition={{type:"spring",duration:2}} initial={{scale:0}} className=" p- pl-0  m-5 ">
+                <motion.div animate={{rotate:rotate ? 360:0}} transition={{duration:1}} onClick={()=>{
+                    setRotate(!rotate);
+                }} className=" pl-12   ml-[1%] mr-[0%] pb-8  ssm:w-[118%] ssm:ml-[-12%] ">
                     <img src={start} alt="" className="" />
-                </div>
+                </motion.div>
                 <div className=" w-screen ">
                     <img className="w w-screen" src={collection} alt="" />
                 </div>
-                <div className="g grid grid-cols-2 gap-1   ml-[5%]   mt-2 p-5  ssm:hidden">
-                    <img className="w-[95%]" src={bento1} alt="" />
-                    <img className=" w-[100%] mr-2 pr-6" src={bento2} alt="" />
-                    <img className="w-[95%] pt-0 mt-[-80%] md:mt-[-75%] sm:mt-[-74%] " src={bento3} alt="" />
-                    <img className="pt-5 w-[97%] lg:w-[95%] md:w-[94.5%] md:h-[99%] sm:w-[93%] sm:h-[99%]  " src={bento4} alt="" />
+                <div  className="g grid grid-cols-2 gap-1   ml-[5%]   mt-2 p-5  ssm:hidden">
+                    <motion.img whileHover={{scale:1.15}} className="w-[95%]" src={bento1} alt="" />
+                    <motion.img whileHover={{scale:1.15}} className=" w-[100%] mr-2 pr-6" src={bento2} alt="" />
+                    <motion.img whileHover={{scale:1.15}} className="w-[95%] pt-0 mt-[-80%] md:mt-[-75%] sm:mt-[-74%] " src={bento3} alt="" />
+                    <motion.img whileHover={{scale:1.15}} className="pt-5 w-[97%] lg:w-[95%] md:w-[94.5%] md:h-[99%] sm:w-[93%] sm:h-[99%]  " src={bento4} alt="" />
                 </div>
 
                 <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden ssm:mt-5 flex flex-col justify-center items-center ssm:w-[100%] ssm:mr-[4%] pl-6 ">
@@ -62,17 +68,17 @@ export default function Home() {
                 </div>
 
                 <div className=" pl-[3%]  pr-3 flex ml-[3%] ssm:hidden">
-                    <img className="r rounded-lg w-[98%]" src={bento5} alt="" />
+                    <motion.img whileHover={{scale:1.15}} className="r rounded-lg w-[98%]" src={bento5} alt="" />
                 </div>
                 <div className="  w-screen  mt-[10%]   ">
                     <img className="ml-0 p-0 w-screen mr-[-2%]" src={category} alt="" />
                 </div>
-                <div className="flex mt-7 ml-[2%] mr-[1%] w-[100%]  justify-center gap-5 ssm:hidden">
-                    <img className="size-[20%] " src={men} alt="" />
+                <motion.div transition={{ duration:2}}  whileInView={{rotate:[0,180,180,0]}} className="flex mt-7 ml-[2%] mr-[1%] w-[100%]  justify-center gap-5 ssm:hidden">
+                    <img  className="size-[20%] " src={men} alt="" />
                     <img className="size-[20%] object-cover" src={women} alt="" />
                     <img className="size-[20%]" src={teen} alt="" />
                     <img className="size-[20%]" src={kids} alt="" />
-                </div>
+                </motion.div>
                 <div className="mt-5 flex flex-col items-center ml-3 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden">
                     <img src={men_mobile} alt="" />
                     <img src={women_mobile} alt="" />
@@ -97,7 +103,7 @@ export default function Home() {
                 <div className=" mt-10">
                     <img src={visit} alt="" />
                 </div>
-            </main>
+            </motion.main>
             <Footer/>
         </div>
     )
