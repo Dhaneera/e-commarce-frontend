@@ -8,6 +8,7 @@ import Error from './pages/Error'
 import ProductSelectionPage from './pages/ProductSelection'
 import Cart from './pages/components/Cart'
 import Footer from './pages/components/Footer'
+import SubCategory from './pages/SubCategory'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/signUp' element={<SignUp/>}></Route>
         <Route path='/error404' element={<Error/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
+        <Route path='/sub' element={<SubCategory/>}></Route>
       </Routes>
       </BrowserRouter>
   )
