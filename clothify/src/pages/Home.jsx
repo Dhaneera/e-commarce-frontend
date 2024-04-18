@@ -31,6 +31,7 @@ import men_mobile from '../assets/c1.png'
 import women_mobile from '../assets/c2.png'
 import teens_mobile from '../assets/c3.png'
 import kids_mobile from '../assets/c4.png'
+import Footer from "./components/Footer";
 
 export default function Home() {
     return (
@@ -63,7 +64,7 @@ export default function Home() {
                 <div className=" pl-[3%]  pr-3 flex ml-[3%] ssm:hidden">
                     <img className="r rounded-lg w-[98%]" src={bento5} alt="" />
                 </div>
-                <div className="  w-screen  mt-20   ">
+                <div className="  w-screen  mt-[10%]   ">
                     <img className="ml-0 p-0 w-screen mr-[-2%]" src={category} alt="" />
                 </div>
                 <div className="flex mt-7 ml-[2%] mr-[1%] w-[100%]  justify-center gap-5 ssm:hidden">
@@ -78,13 +79,13 @@ export default function Home() {
                     <img src={teens_mobile} alt="" />
                     <img src={kids_mobile} alt="" />
                 </div>
-                <div className="  w-screen mt-10   ">
+                <div className="  w-screen mt-[10%]   ">
                     <img className="ml-0 p-0 w-screen mr-[-2%]" src={season} alt="" />
                 </div>
                 <div className="grid grid-cols-2 pt-5 pl-8 gap-3 mr-2 ml-2 ssm:hidden">
                     <img src={summer} alt="" />
                     <img className="xl:w-[93%] lg:w-[92%] md:w-[85%] sm:w-[83%]" src={winter} alt="" />
-                    <img className="mt-[-14%] xl:mt-[-6%]  xl:h-[82.3%] lg:h-[81%] w-[100%] lg:mt-[-6%] md:h-[72%] md:mt-[-2%] sm:h-[80%] sm:mt-[0] " src={autumn}  alt="" />
+                    <img className="mt-[-14%] xl:mt-[-6%] 2xl:mt-[-3.5rem] 2xl:h-[85%] xl:h-[82.3%] lg:h-[81%] w-[100%] lg:mt-[-6%] md:h-[72%] md:mt-[-2%] sm:h-[80%] sm:mt-[0] " src={autumn}  alt="" />
                     <img className=" pr-12 sm:mt-[-4%] sm:h-[83%] " src={spring} alt="" />
                 </div>
                 <div className=" 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden flex flex-col items-center mt-5 pl-5 pr-3">
@@ -93,10 +94,11 @@ export default function Home() {
                     <img className="ml-1" src={autumn_m} alt="" />
                     <img className="pl-1" src={spring_m} alt="" />
                 </div>
-                <div className="w-screen mt-10">
+                <div className=" mt-10">
                     <img src={visit} alt="" />
                 </div>
             </main>
+            <Footer/>
         </div>
     )
 }
