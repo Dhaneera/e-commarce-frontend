@@ -24,6 +24,7 @@ function App() {
         <Route path='/error404' element={<Error/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
         <Route path='/sub' element={<SubCategory/>}></Route>
+        <Route path='/login' element={<Login/>}></Route>
       </Routes>
       </BrowserRouter>
   )
