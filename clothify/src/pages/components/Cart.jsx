@@ -17,12 +17,12 @@ const Cart = () => {
                         <div className='flex flex-col pr-[20%] '>
                             <div className='  flex'>
                                 <h2 className='ml-3'>Yellow Sweatshirt</h2>
-                                <span className=' pr-5 mr-0 ml-[67%]'> 3500.00</span>
+                                <span className=' pr-5 mr-0 ml-[65%]'> 3500.00</span>
                             </div>
                             <span className='ml-[10%] mt-3'>xs/Black</span>
                             <div className='flex flex-row size-[9%] ml-[10%] mt-4'>
                                 <img src={min} alt="" />
-                                <input className='w-[4rem] pl-5  ' type="number" />
+                                <input className='w-[4rem] pl-[2]  bg-black text-white  ' type="number" />
                                 <img src={max} />
                                 <img className='w-[100%] h-[24px] pb-1' src={bin} />
                             </div>
@@ -40,7 +40,7 @@ const Cart = () => {
                             <span className='ml-[10%]'>xs/Black</span>
                             <div className='flex flex-row size-[9%] ml-[10%] mt-4'>
                                 <img src={min} alt="" />
-                                <input className='w-[4rem] pl-5  ' type="number" />
+                                <input className='w-[4rem] pl-6 text-white bg-black ml-2 mr-2' type="number" />
                                 <img src={max} />
                                 <img className='w-[100%] h-[24px] pb-1' src={bin} />
                             </div>
