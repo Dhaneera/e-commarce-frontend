@@ -43,20 +43,20 @@ export default function Home() {
             <div>
                 <Header />
             </div>
-            <motion.main animate={{scale:1}} transition={{type:"spring",duration:2}} initial={{scale:0}} className=" p- pl-0  m-5 ">
+            <motion.main animate={{scale:1}} transition={{type:"spring",duration:2}} initial={{scale:0}} className=" ssm:w-[80%] ssm:ml-[9%] ssm:mt-[6%] sm:w-[85%] sm:ml-[5%] sm:mt-[5%] md:w-[85%] md:ml-[6%] md:mt-[3%] lg:w-[90%] lg:ml-[5%] lg:mt-[3%] xl:w-[80%] xl:mt-[3%] xl:ml-[10%] 2xl:p-20  flex flex-col items-center justify-center  2xl:w-[90%] 2xl:ml-[4%] ">
                 <motion.div animate={{rotate:rotate ? 360:0}} transition={{duration:1}} onClick={()=>{
                     setRotate(!rotate);
                 }} className=" pl-12   ml-[1%] mr-[0%] pb-8  ssm:w-[118%] ssm:ml-[-12%] ">
                     <img src={start} alt="" className="" />
                 </motion.div>
-                <div className=" w-screen ">
-                    <img className="w w-screen" src={collection} alt="" />
+                <div className="  ">
+                    <img className="" src={collection} alt="" />
                 </div>
                 <div  className="g grid grid-cols-2 gap-1   ml-[5%]   mt-2 p-5  ssm:hidden">
-                    <motion.img whileHover={{scale:1.15}} className="w-[95%]" src={bento1} alt="" />
-                    <motion.img whileHover={{scale:1.15}} className=" w-[100%] mr-2 pr-6" src={bento2} alt="" />
-                    <motion.img whileHover={{scale:1.15}} className="w-[95%] pt-0 mt-[-80%] md:mt-[-75%] sm:mt-[-74%] " src={bento3} alt="" />
-                    <motion.img whileHover={{scale:1.15}} className="pt-5 w-[97%] lg:w-[95%] md:w-[94.5%] md:h-[99%] sm:w-[93%] sm:h-[99%]  " src={bento4} alt="" />
+                    <motion.img whileHover={{scale:1.15}} whileInView={{x:0}} initial={{x:-20}} className="w-[95%]" src={bento1} alt="" />
+                    <motion.img whileHover={{scale:1.15}} whileInView={{x:0}} initial={{x:20}} className=" w-[100%] mr-2 pr-6" src={bento2} alt="" />
+                    <motion.img whileHover={{scale:1.15}} whileInView={{x:0}} initial={{x:-20}} className="w-[95%] pt-0 mt-[-80%] md:mt-[-75%] sm:mt-[-74%] " src={bento3} alt="" />
+                    <motion.img whileHover={{scale:1.15}} whileInView={{x:0}} initial={{x:20}} className="pt-5 w-[97%] lg:w-[95%] md:w-[94.5%] md:h-[99%] sm:w-[93%] sm:h-[99%]  " src={bento4} alt="" />
                 </div>
 
                 <div className="2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden ssm:mt-5 flex flex-col justify-center items-center ssm:w-[100%] ssm:mr-[4%] pl-6 ">
@@ -68,10 +68,10 @@ export default function Home() {
                 </div>
 
                 <div className=" pl-[3%]  pr-3 flex ml-[3%] ssm:hidden">
-                    <motion.img whileHover={{scale:1.15}} className="r rounded-lg w-[98%]" src={bento5} alt="" />
+                    <motion.img whileHover={{scale:1.15}} whileInView={{x:0}} initial={{x:-20}} className="r rounded-lg w-[98%]" src={bento5} alt="" />
                 </div>
-                <div className="  w-screen  mt-[10%]   ">
-                    <img className="ml-0 p-0 w-screen mr-[-2%]" src={category} alt="" />
+                <div className="    mt-[10%]   ">
+                    <img className="ml-0 p-0  mr-[-2%]" src={category} alt="" />
                 </div>
                 <motion.div transition={{ duration:2}}  whileInView={{rotate:[0,180,180,0]}} className="flex mt-7 ml-[2%] mr-[1%] w-[100%]  justify-center gap-5 ssm:hidden">
                     <img  className="size-[20%] " src={men} alt="" />
@@ -85,13 +85,13 @@ export default function Home() {
                     <img src={teens_mobile} alt="" />
                     <img src={kids_mobile} alt="" />
                 </div>
-                <div className="  w-screen mt-[10%]   ">
-                    <img className="ml-0 p-0 w-screen mr-[-2%]" src={season} alt="" />
+                <div className="   mt-[10%]   ">
+                    <img className="ml-0 p-0  mr-[-2%]" src={season} alt="" />
                 </div>
                 <div className="grid grid-cols-2 pt-5 pl-8 gap-3 mr-2 ml-2 ssm:hidden">
                     <img src={summer} alt="" />
                     <img className="xl:w-[93%] lg:w-[92%] md:w-[85%] sm:w-[83%]" src={winter} alt="" />
-                    <img className="mt-[-14%] xl:mt-[-6%] 2xl:mt-[-3.5rem] 2xl:h-[85%] xl:h-[82.3%] lg:h-[81%] w-[100%] lg:mt-[-6%] md:h-[72%] md:mt-[-2%] sm:h-[80%] sm:mt-[0] " src={autumn}  alt="" />
+                    <img className="mt-[-14%] xl:mt-[-6%] 2xl:mt- 2xl:h-[85%] xl:h-[82.3%] lg:h-[81%] lg:mt-[-6%] md:h-[72%] md:mt-[-2%] sm:h-[80%] sm:mt-[0] " src={autumn}  alt="" />
                     <img className=" pr-12 sm:mt-[-4%] sm:h-[83%] " src={spring} alt="" />
                 </div>
                 <div className=" 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden flex flex-col items-center mt-5 pl-5 pr-3">
