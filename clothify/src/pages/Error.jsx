@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from "react-router-dom"
 import Logo from "../../public/logo.png"
+import { Link } from 'react-router-dom'
 
 const Error = () => {
+
     return (
         <div className='w-screen h-screen bg-[#fbfcf0] dark:bg-black flex flex-col justify-around items-center'>
             <img src={Logo} alt='logo' className='w-64' />
@@ -11,7 +12,6 @@ const Error = () => {
             <button className='bg-black rounded-lg px-5 py-4 text-white hover:bg-white hover:text-black dark:text-black dark:bg-white dark:hover:bg-gray-400 dark:hover:text-[#fbfcf0]'><Link to='/home'>Back to Home</Link></button>
         </div>
     )
-
-
 }
+
 export default Error
