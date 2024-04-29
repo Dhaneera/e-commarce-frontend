@@ -51,9 +51,9 @@ export default function Home() {
             <div>
                 <Header action={handleClick}/>
             </div>
-            <motion.main animate={{ scale: 1 }} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`ssm:w-[80%] ssm:ml-[9%] ssm:mt-[6%] sm:w-[85%] sm:ml-[5%] sm:mt-[5%] md:w-[85%] md:ml-[6%] md:mt-[3%] lg:w-[90%] lg:ml-[5%] lg:mt-[3%] xl:w-[80%] xl:mt-[3%] xl:ml-[10%] 2xl:p-20  flex flex-col items-center justify-center  2xl:w-[90%] 2xl:ml-[4%] border 5 border-black  ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
+            <motion.main animate={{ scale: 1 }} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`ssm:w-[80%] ssm:ml-[9%] ssm:mt-[6%] sm:w-[85%] sm:ml-[5%] sm:mt-[5%] md:w-[85%] md:ml-[6%] md:mt-[3%] lg:w-[90%] lg:ml-[5%] lg:mt-[3%] xl:w-[80%] xl:mt-[3%] xl:ml-[10%] 2xl:p-20  flex flex-col items-center justify-center  2xl:w-[90%] 2xl:ml-[4%] ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
 
-                <div className="flex w-[100%] justify-end border 9 border-blue-600 overflow-y-hidden ">
+                <div className="flex w-[100%] justify-end  overflow-y-hidden ">
                     <motion.div animate={{ rotate: rotate ? 360 : 0 }} transition={{ duration: 1 }} onClick={() => { setRotate(!rotate); }} className=" pl-12   ml-[1%] mr-[0%] pb-8  ssm:w-[118%] ssm:ml-[-12%]">
                         <img src={start} alt="" className="" />
                     </motion.div>
@@ -62,7 +62,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="   ">
+                <div>
                     <img className="" src={collection} alt="" />
                 </div>
                 <div className="g grid grid-cols-2 gap-1   ml-[5%]   mt-2 p-5  ssm:hidden">
@@ -83,7 +83,7 @@ export default function Home() {
                 <div className=" pl-[3%]  pr-3 flex ml-[3%] ssm:hidden">
                     <motion.img whileHover={{ scale: 1.15 }} whileInView={{ x: 0 }} initial={{ x: -20 }} className="r rounded-lg w-[98%]" src={bento5} alt="" />
                 </div>
-                <div className="    mt-[10%]   ">
+                <div className="mt-[10%]">
                     <img className="ml-0 p-0  mr-[-2%]" src={category} alt="" />
                 </div>
                 <div  className="flex mt-7 ml-[2%] mr-[1%] w-[100%]  justify-center gap-5 ssm:hidden">
