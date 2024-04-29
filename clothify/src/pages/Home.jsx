@@ -86,12 +86,12 @@ export default function Home() {
                 <div className="    mt-[10%]   ">
                     <img className="ml-0 p-0  mr-[-2%]" src={category} alt="" />
                 </div>
-                <motion.div transition={{ duration: 2 }} whileInView={{ rotate: [0, 180, 180, 0] }} className="flex mt-7 ml-[2%] mr-[1%] w-[100%]  justify-center gap-5 ssm:hidden">
-                    <img className="size-[20%] " src={men} alt="" />
-                    <img className="size-[20%] object-cover" src={women} alt="" />
-                    <img className="size-[20%]" src={teen} alt="" />
-                    <img className="size-[20%]" src={kids} alt="" />
-                </motion.div>
+                <div  className="flex mt-7 ml-[2%] mr-[1%] w-[100%]  justify-center gap-5 ssm:hidden">
+                    <motion.img whileHover={{scale:1.5}} className="size-[20%] " src={men} alt="" />
+                    <motion.img whileHover={{scale:1.5}} className="size-[20%] object-cover" src={women} alt="" />
+                    <motion.img whileHover={{scale:1.5}} className="size-[20%]" src={teen} alt="" />
+                    <motion.img whileHover={{scale:1.5}} className="size-[20%]" src={kids} alt="" />
+                </div>
                 <div className="mt-5 flex flex-col items-center ml-3 2xl:hidden xl:hidden lg:hidden md:hidden sm:hidden">
                     <img src={men_mobile} alt="" />
                     <img src={women_mobile} alt="" />
