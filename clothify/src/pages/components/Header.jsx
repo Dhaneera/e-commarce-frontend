@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Image from '../../../public/logo.png'
+import Image from '../../assets/logo.png'
 import { Link } from 'react-router-dom'
 import CartImage from "../../assets/cart.png"
 import Menu from '../../assets/Menu.png'

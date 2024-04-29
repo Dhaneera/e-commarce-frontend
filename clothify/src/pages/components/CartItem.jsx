@@ -1,7 +1,7 @@
 import bin from '../../../public/bin.png'
 import max from '../../../public/max.png'
 import min from '../../../public/min.png'
-import cartImg from '../../../public/product.png'
+import cartImg from '../../assets/logo.png'
 
 function CartItem(params) {
     return(

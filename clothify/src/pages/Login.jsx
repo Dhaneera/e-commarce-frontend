@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import Image from "../assets/login.png"
-import Logo from "../../public/logo.png"
+import Logo from "../assets/logo.png"
 import { Link } from "react-router-dom"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
