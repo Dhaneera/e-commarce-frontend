@@ -21,8 +21,8 @@ const ProductSelection = () => {
         if (!isSelectColor || !isSelectSize) {
             setErrorMessage("Please choose given option to proceed to cart")
             
-            setSelectedColor(null);
-            setSelectedSize(null);
+            setIsSelectColor(null);
+            setSelectSize(null);
             
         } else {
             const newItem = {
