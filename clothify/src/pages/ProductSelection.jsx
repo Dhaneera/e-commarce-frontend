@@ -18,14 +18,20 @@ const ProductSelection = () => {
     const [errorMessage, setErrorMessage] = React.useState("")
 
     const addCart = () => {
-        if (isSelectColor && isSelectSize) {
+        if (!isSelectColor || !isSelectSize) {
+            setErrorMessage("Please choose given option to proceed to cart")
+            
+            setSelectedColor(null);
+            setSelectedSize(null);
+            
+        } else {
             const newItem = {
                 colorName: isSelectColor,
                 preferSize: isSelectSize
             }
             setCartItem([...cartItem, newItem])
-        } else {
-            setErrorMessage("Please choose color and size before adding to cart")
+            setErrorMessage("")
+            
         }
 
 
@@ -105,7 +111,7 @@ const ProductSelection = () => {
 
                     <div className='flex' >
                         <span className=' mt-10 ml-4 max-md:text-xs max-md:ml-3'>In Stock (*)</span>
-                        {errorMessage && <h3 className='mx-12 mb-3  flex justify-center py-3 text-red-800 bg-red-100 rounded-md w-[55%] mt-10 ml-[20%] text-sm '>{errorMessage}</h3>}
+                        {errorMessage && <h3 className='mx-12 mb-3  flex justify-center py-3 text-red-800 bg-red-100 rounded-md w-[55%] mt-10 ml-[20%] text-sm'>{errorMessage}</h3>}
                     </div>
 
 

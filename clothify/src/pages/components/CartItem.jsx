@@ -17,7 +17,7 @@ function CartItem(params) {
             <span className='ml-[10%] mt-3'>xs/Black</span>
             <div className='flex flex-row size-[9%] ml-[10%] mt-4'>
                 <img src={min} alt="" />
-                <input className='w-[4rem] pl-[2]  bg-black text-white  ' type="number" />
+                <input className='w-[4rem] pl-[2]  bg-black text-white ' type="number" />
                 <img src={max} />
                 <img className='w-[100%] h-[24px] pb-1' src={bin} />
             </div>
