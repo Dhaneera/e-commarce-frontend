@@ -18,7 +18,7 @@ const Header = () => {
                 <ul className="flex gap-7 p-5 dark:text-white">
                     <li className="ml-5 hover:underline"><Link to='/home'>Home</Link></li>
                     <li className="hover:underline"><Link>Mens</Link></li>
-                    <li className="hover:underline"><Link>Womens</Link></li>
+                    <li className="hover:underline"><Link>Women</Link></li>
                     <li className="hover:underline"><Link>Kids</Link></li>
                 </ul>
             </div>
