@@ -18,23 +18,26 @@ const ProductSelection = () => {
     const [errorMessage, setErrorMessage] = React.useState("")
 
     const addCart = () => {
-        if (!isSelectColor || !isSelectSize) {
+        if (!isSelectColor && !isSelectSize) {
             setErrorMessage("Please choose given option to proceed to cart")
             
             setIsSelectColor(null);
             setSelectSize(null);
             
-        } else {
+        }else if (!isSelectColor && isSelectSize) {
+            setErrorMessage("please choose color")
+            setIsSelectColor(null)
+        }else if(!isSelectSize && isSelectColor){
+            setErrorMessage("please choose size")
+            setSelectSize(null);
+        }else {
             const newItem = {
                 colorName: isSelectColor,
                 preferSize: isSelectSize
             }
             setCartItem([...cartItem, newItem])
             setErrorMessage("")
-            
         }
-
-
     }
 
     const toggleColor = (colorName) => {
