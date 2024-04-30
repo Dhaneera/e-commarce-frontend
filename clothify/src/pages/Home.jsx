@@ -51,7 +51,7 @@ export default function Home() {
             </div>
             <motion.main animate={{ scale: 1 }} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`flex flex-col items-center justify-center 2xl:p-52    ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
 
-                <div className="flex w-[100%] justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-0 border 8 border-red-600">
+                <div className="flex w-[100%] justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-[-14%] ">
                     <div  className=" 2xl:mt-0 pt-0">
                         <img src={start} alt="" c />
                     </div>
