@@ -49,7 +49,7 @@ function App() {
         <Route path='/signUp' element={<SignUp/>}></Route>
         <Route path='/error404' element={<Error/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
-        <Route path='/sub' element={<SubCategory/>}></Route>
+        <Route path='/subCategories' element={<SubCategory/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/products' element={<ProductView collection="SUMMER COLLECTION" />}></Route>
         <Route path='/mens' element={<Men />}></Route>

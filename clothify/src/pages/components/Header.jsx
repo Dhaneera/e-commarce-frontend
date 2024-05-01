@@ -18,10 +18,11 @@ const Header = () => {
         <header className="flex sticky  bg-[#F4F4DC] font-mulish dark:bg-[#18191b]  rounded-xl h-[6rem] mb-12   ">
             <div className="w-1/3 justify-center items-center p-7 max-lg:hidden ">
                 <ul className="flex gap-7 p-2 dark:text-white tracking-wider lg:tracking-wide lg:text-xs  text-sm">
-                    <li className="ml-5 hover:underline"><Link to='/home'>Home</Link></li>
-                    <li className="hover:underline"><Link>Category</Link></li>
-                    <li className="hover:underline"><Link>SubCategory</Link></li>
-                    <li className="hover:underline"><Link>Collection</Link></li>
+                <li className="ml-5 hover:underline"><Link to='/mens'>Mens</Link></li>
+                    <li className="hover:underline"><Link to='/women'>Womens</Link></li>
+                    <li className="hover:underline"><Link to='/teens'>Teens</Link></li>
+                    <li className="hover:underline"><Link to='/kids'>Kids</Link></li>
+                    <li className="hover:underline"><Link to='/subCategories'>SubCategories</Link></li>
                 </ul>
             </div>
             <div className="w-1/3 flex justify-center items-center max-lg:hidden p-5 lg:ml-10">
