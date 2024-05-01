@@ -100,10 +100,10 @@ export default function Home() {
                     <img className="ml-0 p-0  mr-[-2%]" src={season} alt="" />
                 </div>
                 <div className="grid grid-cols-2 pt-5 pl-8 gap-3 mr-2 ml-2 max-lg:hidden">
-                    <img src={summer} alt="" />
-                    <img className="xl:w-[93%] lg:w-[92%] md:w-[85%] sm:w-[83%] mb-0" src={winter} alt="" />
-                    <img className="p-0 mt-[-6%]" src={autumn} alt="" />
-                    <img className="pr-12 h-[100%] object-cover " src={spring} alt="" />
+                    <motion.img whileHover={{scale:1.15}} src={summer} alt="" />
+                    <motion.img whileHover={{scale:1.15}} className="xl:w-[93%] lg:w-[92%] md:w-[85%] sm:w-[83%] mb-0" src={winter} alt="" />
+                    <motion.img whileHover={{scale:1.15}} className="p-0 mt-[-6%]" src={autumn} alt="" />
+                    <motion.img whileHover={{scale:1.15}} className="pr-12 h-[100%] object-cover " src={spring} alt="" />
                 </div>
                 <div className=" p-10 flex flex-col items-center lg:hidden ">
                     <motion.img whileHover={{scale:1.15}} className="pl-1" src={summer_m} alt="" />
