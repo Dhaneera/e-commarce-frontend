@@ -34,6 +34,7 @@ import women from '../assets/women.png';
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -84,17 +85,33 @@ export default function Home() {
                 <div className="mt-[10%]">
                     <img className="ml-0 p-0  mr-[-2%]" src={category} alt="" />
                 </div>
-                <div  className="flex mt-7 ml-[2%] mr-[1%] w-[100%]  justify-center gap-5 max-lg:hidden">
-                    <motion.img whileHover={{scale:1.5}} className="size-[20%] lg:size-[23%] " src={men} alt="" />
-                    <motion.img whileHover={{scale:1.5}} className="size-[20%] object-cover lg:size-[23%]" src={women} alt="" />
-                    <motion.img whileHover={{scale:1.5}} className="size-[20%] lg:size-[23%]" src={teen} alt="" />
-                    <motion.img whileHover={{scale:1.5}} className="size-[20%] lg:size-[23%]" src={kids} alt="" />
+                <div  className="flex mt-12 ml-[2%] mr-[1%] w-[100%]  justify-center gap-5 max-lg:hidden ">
+                    <Link to='/mens' className=''>
+                    <motion.img whileHover={{scale:1.5}} className="" src={men} alt="" />
+                    </Link>
+                    <Link to='/women'>
+                    <motion.img whileHover={{scale:1.5}} className=" object-cover " src={women} alt="" />
+                    </Link>
+                    <Link to='/teens'>
+                    <motion.img whileHover={{scale:1.5}} className="" src={teen} alt="" />
+                    </Link>
+                    <Link to='/kids'>
+                    <motion.img whileHover={{scale:1.5}} className="" src={kids} alt="" />
+                    </Link>
                 </div>
                 <div className="mt-5 flex flex-col items-center p-10 lg:hidden ">
+                    <Link to='/mens'>
                     <motion.img whileHover={{scale:1.15}} src={men_mobile} alt="" />
+                    </Link>
+                    <Link to='/women'>
                     <motion.img whileHover={{scale:1.15}} src={women_mobile} alt="" />
+                    </Link>
+                    <Link to='/teens'>
                     <motion.img whileHover={{scale:1.15}} src={teens_mobile} alt="" />
+                    </Link>
+                    <Link to='/kids'>
                     <motion.img whileHover={{scale:1.15}} src={kids_mobile} alt="" />
+                    </Link>
                 </div>
                 <div className="   mt-[10%]   ">
                     <img className="ml-0 p-0  mr-[-2%]" src={season} alt="" />
