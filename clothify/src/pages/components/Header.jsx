@@ -26,7 +26,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="w-1/3 flex justify-center items-center max-lg:hidden p-5 lg:ml-10">
-                <img src={Image} className="w-40" alt="logo" />
+               <Link className='ml-0' to='/home'><img src={Image} className="w-40 p-3" alt="logo" /></Link>
             </div>
             <div className="flex w-1/3 justify-end items-center p-5 gap-5 max-lg:hidden dark:text-white mr-5 text">
                 <img src={cart} className=' size-5 hidden dark:flex ' alt="" />
