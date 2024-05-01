@@ -22,7 +22,7 @@ import bento_m5 from '../assets/m5.png';
 import men from '../assets/mens.png';
 import season from '../assets/seasonal.png';
 import spring_m from '../assets/spring-m.png';
-import spring from '../assets/spring.png';
+import spring from '../assets/spring1.png';
 import summer_m from '../assets/summer-m.png';
 import summer from '../assets/summer.png';
 import bento1 from '../assets/T-shirtBento.png';
@@ -49,7 +49,7 @@ export default function Home() {
             <div className='mb-0 p-0'>
                 <Header action={handleClick}/>
             </div>
-            <motion.main animate={{ scale: 1 }} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`flex flex-col items-center justify-center 2xl:p-52 lg:p-20    ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
+            <motion.main animate={{ scale: 1 }} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`flex flex-col items-center justify-center 2xl:p-60 lg:p-24    ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
 
                 <div className="flex w-[100%] justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-[-14%] ">
                     <div  className=" 2xl:mt-10 pt-0 ">
@@ -103,7 +103,7 @@ export default function Home() {
                     <img src={summer} alt="" />
                     <img className="xl:w-[93%] lg:w-[92%] md:w-[85%] sm:w-[83%] mb-0" src={winter} alt="" />
                     <img className="p-0 mt-[-6%]" src={autumn} alt="" />
-                    <img className="pr-12 h-[100%] " src={spring} alt="" />
+                    <img className="pr-12 h-[100%] object-cover " src={spring} alt="" />
                 </div>
                 <div className=" p-10 flex flex-col items-center lg:hidden ">
                     <motion.img whileHover={{scale:1.15}} className="pl-1" src={summer_m} alt="" />
