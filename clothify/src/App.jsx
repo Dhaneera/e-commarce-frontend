@@ -50,18 +50,18 @@ function App() {
         <Route path='/error404' element={<Error/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
         <Route path='/subCategories' element={<SubCategory/>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
-        <Route path='/products' element={<ProductView collection="SUMMER COLLECTION" />}></Route>
+        // <Route path='/products' element={<ProductView collection="SUMMER COLLECTION" />}></Route>
         <Route path='/mens' element={<Men />}></Route>
         <Route path='/kids' element={<Kids />}></Route>
         <Route path='/women' element={<Women/>}></Route>
         <Route path='/teens' element={<Teens/>}></Route>
         <Route path='/order' element={<Order/>}></Route>
         <Route path='/order/success' element={<OrderComplete />}></Route>
-        <Route path='/products/:type' element={<Products/>}></Route>
-        <Route path=':name/sub/product' element={<Products/>}></Route>
+        // <Route path='/products/:type' element={<Products/>}></Route>
+        // <Route path=':name/sub/product' element={<Products/>}></Route>
+        <Route path=':name/product/:id' element={<ProductSelectionPage/>}></Route>
         <Route path="*" element={<PageNotFound/>} />
-        <Route path='subCategories/:name/product' element={<Product/>}></Route>
+        <Route path='subCategories/:name/product' element={<Products/>}></Route>
       </Routes>
       </BrowserRouter>
       )
