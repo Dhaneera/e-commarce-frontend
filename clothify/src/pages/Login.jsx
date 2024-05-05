@@ -2,12 +2,11 @@
 import { useState } from "react";
 import Image from "../assets/login.png"
 import Logo from "../assets/logo.png"
-import { Link } from "react-router-dom"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-
-const Login = ()=> {
+const land = ()=> {
     const nav=useNavigate();
     const [formData, setFormData] = useState({
         email: "",
@@ -85,4 +84,4 @@ const Login = ()=> {
 }   
 
 
-export default Login
+export default land

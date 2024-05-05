@@ -1,7 +1,7 @@
 import ProductCard from './components/ProductCard'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import summer from '../assets/summerCollection.png'
+
 import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Axios from 'axios'
@@ -13,11 +13,12 @@ const Men = () => {
     const [products, setProducts] = useState([]);
     const nav = useNavigate();
     useEffect(()=>{
-        const url="http://localhost:8080/product/get/category/mens";
+        const url="http://localhost:8080/product/get/category/men";
         Axios.get(url).then((res)=>{
             setProducts(res.data)
         })
     },[])
+
     return (
         <div className="block scroll-custom h-max">
             <Header/>
@@ -25,10 +26,11 @@ const Men = () => {
                 <div className='mt-0 h-72 relative'>
                     <img src={Image} className='h-[100%] w-screen object-cover' alt='Mens image' />
                 </div>
-                <div className="grid grid-cols-2 max-lg:grid-cols-3 max-md:grid-cols-2 lg:grid-cols-4 gap-0 pl-10 mt-20 w-[80%] max-lg:w-[90%] max-sm:grid-cols-1 ml-2">  
+                <div className="grid grid-cols-2 max-lg:grid-cols-3 max-md:grid-cols-2 lg:grid-cols-4 gap-0 pl-10 mt-20 w-[80%] max-lg:w-[90%] max-sm:grid-cols-1 ml-2">
                 {products.map((element)=>{
                     return(
                         <div>
+                            {console.log(element.id)}
                         <ProductCard product={element} image={Img}/>
                         </div>
                     )

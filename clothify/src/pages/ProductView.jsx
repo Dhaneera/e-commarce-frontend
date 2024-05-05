@@ -30,9 +30,9 @@ const ProductView = (props) => {
                         {products.map((element) => {
                             return (
                                 <div>
-                                    <ProductCard product={element} image={Img} />
-                                    <ProductCard product={element} image={Im} />
-                                    <ProductCard product={element} image={Im} />
+                                    <ProductCard product={element} key={props.Img} image={Img} />
+                                    <ProductCard product={element} key={props.Img} image={Im} />
+                                    <ProductCard product={element} key={props.Img} image={Im} />
                                 </div>
                             )
                         })}

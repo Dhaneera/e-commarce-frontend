@@ -42,17 +42,18 @@ export default function Home() {
     function handleClick(){
         setIsOpen(prevState=>!prevState)
         console.log(isOpen);
-
     }
+
+
 
     return (
         <div className='flex flex-col bg-[#FCFCF5]  dark:bg-black'>
             <div className='mb-0 p-0'>
-                <Header action={handleClick}/>
+                <Header  action={handleClick}/>
             </div>
-            <motion.main animate={{ scale: 1 }} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`flex flex-col items-center justify-center 2xl:p-60 lg:p-24    ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
+            <motion.main animate={{ scale: 1 }} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`flex flex-col items-center justify-center 2xl:p-36 lg:p-24   p-0 mt-0   ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
 
-                <div className="flex w-[100%] justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-[-14%] ">
+                <div className=" flex w-[100%]  justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-[-14%] ">
                     <div  className=" 2xl:mt-10 pt-0 ">
                         <img src={start} alt="" c />
                     </div>
@@ -64,12 +65,12 @@ export default function Home() {
                 <div>
                     <img className="" src={collection} alt="" />
                 </div>
-                <div className="g grid grid-cols-2 gap-1   ml-[5%]   mt-2 p-5  max-sm:hidden">
+                <motion.div  className="g grid grid-cols-2 gap-1   ml-[5%]   mt-2 p-5  max-sm:hidden">
                     <motion.img whileHover={{ scale: 1.15 }} whileInView={{ x: 0 }} initial={{ x: -20 }} className="w-[95%]" src={bento1} alt="" />
                     <motion.img whileHover={{ scale: 1.15 }} whileInView={{ x: 0 }} initial={{ x: 20 }} className=" w-[100%] mr-2 pr-6" src={bento2} alt="" />
                     <motion.img whileHover={{ scale: 1.15 }} whileInView={{ x: 0 }} initial={{ x: -20 }} className="w-[95%] pt-0 mt-[-80%] md:mt-[-75%] sm:mt-[-74%] " src={bento3} alt="" />
                     <motion.img whileHover={{ scale: 1.15 }} whileInView={{ x: 0 }} initial={{ x: 20 }} className="pt-5 w-[97%] lg:w-[95%] md:w-[94.5%] md:h-[99%] sm:w-[93%] sm:h-[99%] " src={bento4} alt="" />
-                </div>
+                </motion.div>
 
                 <div className=" flex flex-col justify-center items-center p-10 md:hidden ">
                     <motion.img whileHover={{scale:1.15}} className="" src={bento_m1} alt="" />

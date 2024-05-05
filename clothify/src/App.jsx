@@ -45,7 +45,6 @@ function App() {
       <Routes>
         <Route path='/'element={<Login/>}></Route>
         <Route path='/home' element={<Home/>}></Route>
-        <Route path='/productSelect' element={<ProductSelectionPage/>}></Route>
         <Route path='/signUp' element={<SignUp/>}></Route>
         <Route path='/error404' element={<Error/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
@@ -58,6 +57,7 @@ function App() {
         <Route path='/teens' element={<Teens/>}></Route>
         <Route path='/order' element={<Order/>}></Route>
         <Route path='/order/success' element={<OrderComplete />}></Route>
+        <Route path=':name/product/:id' element={<ProductSelectionPage/>}></Route>
         <Route path="*" element={<PageNotFound/>} />
       </Routes>
       </BrowserRouter>
