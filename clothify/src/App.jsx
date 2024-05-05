@@ -18,6 +18,7 @@ import PageNotFound from '../src/pages/PageNotFound'
 import Kids from '../src/pages/Kids'
 import Women from '../src/pages/Women'
 import Teens from '../src/pages/Teens'
+import Products from './pages/Products'
 
 
 function App() {
@@ -57,8 +58,10 @@ function App() {
         <Route path='/teens' element={<Teens/>}></Route>
         <Route path='/order' element={<Order/>}></Route>
         <Route path='/order/success' element={<OrderComplete />}></Route>
-        <Route path=':name/product/:id' element={<ProductSelectionPage/>}></Route>
+        <Route path='/products/:type' element={<Products/>}></Route>
+        <Route path=':name/sub/product' element={<Products/>}></Route>
         <Route path="*" element={<PageNotFound/>} />
+        <Route path='subCategories/:name/product' element={<Product/>}></Route>
       </Routes>
       </BrowserRouter>
       )
