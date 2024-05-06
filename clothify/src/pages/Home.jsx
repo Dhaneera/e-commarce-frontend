@@ -12,7 +12,7 @@ import teens_mobile from '../assets/c3.png';
 import kids_mobile from '../assets/c4.png';
 import category from '../assets/category.png';
 import collection from '../assets/collection.png';
-import start from '../assets/homeStart.png';
+import start from '../assets/StartImg.png';
 import kids from '../assets/kids.png';
 import bento_m1 from '../assets/m1.png';
 import bento_m2 from '../assets/m2.png';
@@ -35,8 +35,9 @@ import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Link } from 'react-router-dom';
+import Transition from './components/Transition';
 
-export default function Home() {
+const Home=()=> {
     const [isOpen, setIsOpen] = React.useState(false);
 
     function handleClick(){
@@ -46,16 +47,16 @@ export default function Home() {
 
 
 
-    return (
-        <div className='flex flex-col bg-[#FCFCF5]  dark:bg-black'>
-            <div className='mb-0 p-0'>
-                <Header  action={handleClick}/>
-            </div>
-            <motion.main animate={{ scale: 1 }} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`flex flex-col items-center justify-center 2xl:p-36 lg:p-24   p-0 mt-0   ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
 
-                <div className=" flex w-[100%]  justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-[-14%] ">
+    return (
+        <div className='flex flex-col bg-[#FCFCF5]  dark:bg-black  '>
+            <div>
+            <Header action={handleClick}/>
+            </div>
+            <motion.main animate={{ scale: 1 }} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`flex flex-col items-center justify-center 2xl:p-36 lg:p-24   p-0  mt-20   ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
+                <div className=" flex w-[100%]  justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-[-14%] scrollbar-thin over ">
                     <div  className=" 2xl:mt-10 pt-0 ">
-                        <img src={start} alt="" c />
+                        <img src={start} alt="" />
                     </div>
                     <div   className={`mt-[-4%] absolute mr-[-9%] ${isOpen==true?`fixed`:`hidden`}`}>
                         <Cart />
@@ -137,3 +138,4 @@ export default function Home() {
         </div>
     )
 }
+export default Transition(Home)

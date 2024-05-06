@@ -19,6 +19,7 @@ import Kids from '../src/pages/Kids'
 import Women from '../src/pages/Women'
 import Teens from '../src/pages/Teens'
 import Products from './pages/Products'
+import { AnimatePresence } from 'framer-motion'
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
       (
         
       <BrowserRouter>
+      <AnimatePresence>
       <Routes>
         <Route path='/'element={<Login/>}></Route>
         <Route path='/home' element={<Home/>}></Route>
@@ -63,6 +65,7 @@ function App() {
         <Route path="*" element={<PageNotFound/>} />
         <Route path='subCategories/:name/product' element={<Products/>}></Route>
       </Routes>
+      </AnimatePresence>
       </BrowserRouter>
       )
   )
