@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion ,useScroll,useMotionValue } from 'framer-motion';
 import React from "react";
 import autumn_m from '../assets/autumn-mobile.png';
 import autumn from '../assets/autumn.png';
@@ -36,29 +36,30 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Link } from 'react-router-dom';
 import Transition from './components/Transition';
+import Navbar from './components/Navbar';
+import { useState } from 'react';
 
 const Home=()=> {
-    const [isOpen, setIsOpen] = React.useState(false);
+    const[isOpen,setIsOpen]=useState(true);
 
-    function handleClick(){
-        setIsOpen(prevState=>!prevState)
-        console.log(isOpen);
-    }
-
+    
+    
 
 
 
     return (
-        <div className='flex flex-col bg-[#FCFCF5]  dark:bg-black  '>
-            <div>
-            <Header action={handleClick}/>
+        <div className='flex flex-col bg-[#FCFCF5]  dark:bg-black overflow-hidden  '>
+            <div className=' fixed w-[100%] h-[5rem] bg-[#FCFCF5] dark:fixed dark:bg-black z-50 '>
+            <Navbar open={()=>setIsOpen(prevState=>!prevState)}/>
             </div>
-            <motion.main animate={{ scale: 1 }} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`flex flex-col items-center justify-center 2xl:p-36 lg:p-24   p-0  mt-20   ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
-                <div className=" flex w-[100%]  justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-[-14%] scrollbar-thin over ">
+        
+
+            <motion.main animate={{ scale:1}} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`flex flex-col items-center justify-center   p-0  mt-44 max-md:mt-32 max-md:p-18  max-xl:mt-10 max-xl:p-14 max-2xl:p-20 max-2xl:mt-16 2xl:p-32  ${isOpen==true?` overflow-hidden`:` overflow-scroll`} `}>
+                <div className=" f w-[100%]  justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-[-14%] scrollbar-thin over ">
                     <div  className=" 2xl:mt-10 pt-0 ">
                         <img src={start} alt="" />
                     </div>
-                    <div   className={`mt-[-4%] absolute mr-[-9%] ${isOpen==true?`fixed`:`hidden`}`}>
+                    <div className={`w-[100%] h-[100%]  mt-[-66%] xl:mt-[-72%] xl:ml-[5%] p-0 max-2xl:mt[-70%] mr-10 fixed ${isOpen?`fixed`:`hidden`}`}>
                         <Cart />
                     </div>
                 </div>

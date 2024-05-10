@@ -47,7 +47,7 @@ const SignUp = () => {
         else if (formData.password === formData.verify) {
             if (formData.phone.length == 10 && formData.email.match(emailRegex)) {
                 setIsWrong(false)
-                Axios.post(url, { id: 0, mail: formData.email, name: formData.username, address: formData.address, phone: formData.phone })
+                    .post(url, { id: 0, mail: formData.email, name: formData.username, address: formData.address, phone: formData.phone })
                     .then(res => {
                         if (res.data === true) {
                             useNav('/')
