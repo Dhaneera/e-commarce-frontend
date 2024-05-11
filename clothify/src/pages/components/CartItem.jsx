@@ -24,13 +24,10 @@ function CartItem(props) {
     //     .then((res)=>{
     //         setData({
     //             id: res.data.id,
-    //         })
+    //         })`
     //     })
     //     .catch(error=>useNav('/error404'))
     // },[])
-
-
-
 
     return (
         <div className='flex mb-3 dark:bg-[#18191b] dark:text-white '>

@@ -40,7 +40,7 @@ import Navbar from './components/Navbar';
 import { useState } from 'react';
 
 const Home=()=> {
-    const[isOpen,setIsOpen]=useState(true);
+    const[isOpen,setIsOpen]=useState(false);
 
     
     
