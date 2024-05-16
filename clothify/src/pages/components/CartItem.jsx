@@ -3,7 +3,7 @@ import cartImg from '../../assets/product.png'
 import addLight from '../../assets/PlusLight.png'
 import addDark from '../../assets/PlusDark.png'
 import minusLight from '../../assets/MinusLight.png'
-import minusDark from '../../assets/MinusDark.png'
+import minusDark from '../../assets/DarkMinus.png'
 import { motion } from 'framer-motion'
 import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -24,7 +24,7 @@ function CartItem(props) {
     //     .then((res)=>{
     //         setData({
     //             id: res.data.id,
-    //         })`
+    //         })
     //     })
     //     .catch(error=>useNav('/error404'))
     // },[])

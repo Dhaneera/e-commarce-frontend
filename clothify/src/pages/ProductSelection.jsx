@@ -1,30 +1,31 @@
-import product from '../assets/product.png'
+import axios from 'axios'
+import { motion } from 'framer-motion'
+import React, { useEffect, useState } from "react"
+import { useNavigate, useParams } from 'react-router-dom'
+import minusDark from '../assets/DarkMinus.png'
 import primary from '../assets/Ellipse-1.png'
 import secondary from '../assets/Ellipse-2.png'
 import alter from '../assets/Ellipse-3.png'
 import alter_1 from '../assets/Ellipse-4.png'
-import Header from './components/Header'
-import React, { useEffect, useState } from "react";
-import { motion } from 'framer-motion'
-import Footer from '../pages/components/Footer'
-import axios from 'axios'
-import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import addLight from '../assets/PlusLight.png'
-import addDark from '../assets/PlusDark.png'
 import minusLight from '../assets/MinusLight.png'
-import minusDark from '../assets/MinusDark.png'
+import addDark from '../assets/PlusDark.png'
+import addLight from '../assets/PlusLight.png'
+import product from '../assets/product.png'
+import Footer from '../pages/components/Footer'
+import Header from './components/Header'
 const ProductSelection = () => {
 
     const useNav = useNavigate();
     const { id } = useParams();
+    // const [isOpen, setIsOpen] = useState(false)
     const [data, setData] = useState({
-            id: 0,
-            image: '',
-            name: '',
-            price: 0,
-            description: '',
+        id: 0,
+        image: '',
+        name: '',
+        price: 0,
+        description: '',
     });
+    const [stock, setStock] = useState(10);
 
     useEffect(() => {
         const url = `http://localhost:8080/product/get/${id}`
@@ -35,6 +36,7 @@ const ProductSelection = () => {
                     name: res.data.name,
                     description: res.data.desc,
                     price: res.data.price,
+                    qty:res.data.qty
                 })
             })
             .catch(error => useNav('/error404'));
@@ -46,60 +48,92 @@ const ProductSelection = () => {
     const [isSelectColor, setIsSelectColor] = React.useState(null)
     const [cartItem, setCartItem] = React.useState([])
     const [errorMessage, setErrorMessage] = React.useState("")
-    const [state, setState] = useState(false);
-    const [stock, setStock] = useState(10);
-    const [cart, setCart] = useState([]);
+    const [formData, setFormData] = React.useState({
+        id: 0,
+        productTot: 0,
+        size: "",
+        qty: 1,
+        price: 0,
+        stockId: 0
+    })
 
-
-    const handleClick = (item) => {
-        let isPresent = false
-        cart.forEach((item) => {
-            if (item.id === product.id) {
-                isPresent = true
-
-            }
-        })
-        if (isPresent) {
-            return;
-        }
-        setCart([...cart, item])
-
-    }
-
-
-    const addCart = (e) => {
-        const url=("http://localhost:8080/cart/add")
-        e.preventDefault();
+    function addCart(e) {
         if (!isSelectColor && !isSelectSize) {
-            setErrorMessage("choose options to proceed")
-
-            setIsSelectColor(null);
-            setSelectSize(null);
-
-        } else if (!isSelectColor && isSelectSize) {
+            setErrorMessage("choose options to proceed ")
+            setIsSelectColor(null)
+            setSelectSize(null)
+        }else if (!isSelectColor && isSelectSize) {
             setErrorMessage("please choose color")
             setIsSelectColor(null)
-        } else if (!isSelectSize && isSelectColor) {
+        }else if (isSelectColor && !isSelectSize) {
             setErrorMessage("please choose size")
-            setSelectSize(null);
-        } else {
-            const newItem = {
-                colorName: isSelectColor,
+            setSelectSize(null)
+        }else{
+            const newItem={
+                colorName:isSelectColor,
                 preferSize: isSelectSize
             }
-            setCartItem([...cartItem, newItem])
-            setErrorMessage("") 
-            axios.post(url,data).then(res=>{
-                if(res.data === true){
-                    useNav('/mens')
-                }
-            }).catch(error=>{
-                useNav('/error404')
+            setCartItem((prev)=>{
+                return[
+                    ...cartItem,
+                    newItem
+                ]
             })
-            
-            
+            setErrorMessage("")
+            const url='	http://localhost:8080/cart/add'
+            axios.post(url,{
+                id:0,
+                stock:{id:formData.id},
+                qty:formData.qty,
+                productTot: formData.productTot,
+                completed:false,
+                customer:{id:1}
+            }).then(res=>{
+                console.log("status came out correct")
+            })
         }
     }
+    // const addCart = async (e) => {
+    //     if (!isSelectColor && !isSelectSize) {
+    //         setErrorMessage("choose options to proceed")
+
+    //         setIsSelectColor(null);
+    //         setSelectSize(null);
+
+    //     } else if (!isSelectColor && isSelectSize) {
+    //         setErrorMessage("please choose color")
+    //         setIsSelectColor(null)
+    //     } else if (!isSelectSize && isSelectColor) {
+    //         setErrorMessage("please choose size")
+    //         setSelectSize(null);
+    //     } else {
+    //         const newItem = {
+    //             colorName: isSelectColor,
+    //             preferSize: isSelectSize
+    //         }
+    //         setCartItem([...cartItem, newItem])
+    //         setErrorMessage("")
+    //         const url = 'http://localhost:8080/cart/add';
+    //         console.log(formData.total);
+    //         await axios.post(url, {
+    //             id: 0,
+    //             stock: { id: formData.stockId },
+    //             qty: formData.qty,
+    //             productTot: formData.total,
+    //             isComplete: false,
+    //             customer:{
+    //                 id:1
+    //             }
+    //         }).then(res =>{
+    //             if(res.status===200){
+    //                 console.log("status came out correct")
+    //                 setIsOpen(true);
+
+    //             }
+    //         });
+    //     }
+
+    // }
 
     const toggleColor = (colorName) => {
         setIsSelectColor((prevIsSelectColor) => {
@@ -109,53 +143,103 @@ const ProductSelection = () => {
 
 
     function add(params) {
+        setFormData((prev) => {
+            return {
+                ...prev,
+                qty: prev.qty + 1
+            }
+        })
         setCount(prevCount => prevCount + 1)
+        let t = formData.price * (formData.qty + 1);
+        setFormData((prev) => {
+            return {
+                ...prev,
+                total: t
+            }
+        });
     }
 
 
     function sub(params) {
         if (count > 1) {
+            setFormData((prev) => {
+                return {
+                    ...prev,
+                    qty: prev.qty - 1
+                }
+            })
             setCount(prevCount => prevCount - 1)
+            let t = formData.price * (formData.qty - 1);
+            setFormData((prev) => {
+                return {
+                    ...prev,
+                    total: t
+                }
+            });
         }
     }
 
-
-
     const toggleSize = (e, preferSize) => {
         setSelectSize((prevIsisSelectSizeSize) => {
-            let promise = axios.get(`http://localhost:8080/stock/get?size=${e.target.name}&id=${data.id}`).then((res) => {
-                console.log(e.target.name);
 
-                if (res.data[0] === 'not valid') {
-                    setStock(0)
-                    setIsDisabled(true)
+            let promise = axios.get(`http://localhost:8080/stock/get?size=${e.target.name}&id=${data.id}`)
+                .then((res) => {
+                    console.log(res.data)
+                    if (res.data[0] == "not valid") {
+                        setData((prev) => {
+                            return {
+                                ...prev,
+                                price: 0,
+                                qty:0
+                            }
+                        })
+                    } else {
+                        setData(prev => {
+                            console.log(res.data[0].qty)
+                            return {
+                                ...prev,
+                                price: res.data[0].price,
+                                qty:res.data[0].qty
+                            }
+                        })
+                    }
 
-                    setData((prevState) => {
-                        return {
-                            ...prevState,
-                            price: 0
-                        }
-                    })
-                } else {
-                    setStock(res.data[0].qty)
-                    setData((prevState) => {
-                        return {
-                            ...prevState,
-                            price: res.data[0].price
-                        }
-                    })
-                    setIsDisabled(false)
-                }
-            })
+                    // if (res.data[0] === 'not valid') {
+                    //     setStock(0)
+                    //     setIsDisabled(true)
+                    //     setData((prevState) => {
+                    //         return {
+                    //             ...prevState,
+                    //         }
+                    //     })
+                    // } else {
+                    //     setStock(data[0].qty)
+                    //     setData((prevState) => {
+                    //         return {
+                    //             ...prevState,
+                    //             price: res.data[0].price
+                    //         }
+                    //     })
+                    //     setFormData((prev) => {
+                    //         return {
+                    //             ...prev,
+                    //             size: res.data[0].size,
+                    //             price: res.data[0].price,
+                    //             stockId: res.data[0].id,
+                    //             total: res.data[0].price
+                    //         }
+                    //     })
+                    //     setIsDisabled(false)
+                    // }
+                })
+
             return prevIsisSelectSizeSize === preferSize ? null : preferSize
         })
     }
-
-    useEffect(() => {
-    }, [isSelectSize])
-
-    useEffect(() => {
-    }, [isSelectColor])
+    // useEffect(() => {
+    // }, [isSelectSize])
+    // useEffect(() => {
+    // }, [isSelectColor])
 
     return (
         <div className=' flex flex-col bg-[#FCFCF5]   dark:bg-black p-0 m-0' >
@@ -185,15 +269,13 @@ const ProductSelection = () => {
                         <motion.img whileHover={{ scale: 1.15 }} src={secondary} alt="color palate first color" className={` size-10 max-md:size-7 hover:border  hover:ring-4 ring-green-500   rounded-full border-white   ${isSelectColor === "secondary" ? " border-2 ring-4  ring-green-500 rounded-full" : ""}`} onClick={() => toggleColor("secondary")} />
                         <motion.img whileHover={{ scale: 1.15 }} src={alter} alt="color palate first color" className={` size-10 max-md:size-7  hover:border  hover:ring-4 ring-amber-500   rounded-full border-white   ${isSelectColor === "alter" ? "border-2 ring-4  ring-amber-500 rounded-full" : ""}`} onClick={() => toggleColor("alter")} />
                         <motion.img whileHover={{ scale: 1.15 }} src={alter_1} alt="color palate first color" className={` size-10 max-md:size-7  hover:border  hover:ring-4  ring-red-500  rounded-full border-white   ${isSelectColor === "alter_1" ? "border-2 ring-4  ring-red-500 rounded-full" : ""}`} onClick={() => toggleColor("alter_1")} />
-
                     </div>
 
                     <div className='flex' >
-                        <span className=' mt-10 ml-4 max-md:text-xs max-md:ml-3'>In Stock ({stock})</span>
+                        <span className=' mt-10 ml-4 max-md:text-xs max-md:ml-3'>In Stock ({data.qty})</span>
                         {errorMessage && <h3 className='mx-12 mb-3  flex justify-center py-3 text-red-800 bg-red-100 rounded-md w-[55%] max-xl:hidden mt-10 ml-[20%] text-sm'>{errorMessage}</h3>}
                     </div>
                     {errorMessage && <h3 className='px-3  truncate  flex justify-center py-3 text-red-800 bg-red-100 rounded-md  mt-10 ml-[8%] text-xs xl:hidden'>{errorMessage}</h3>}
-
 
 
                     <div className='flex  p-5 justify-center max-md:gap-3 gap-5 max-md:hidden '>
@@ -213,7 +295,7 @@ const ProductSelection = () => {
                         <motion.img whileHover={{ scale: 1.15 }} className=' size-8  hover:size-9 border-none hidden dark:flex' onClick={sub} src={minusDark} alt="" />
                     </div>
                     <div className='mt-5 ml-5 md:hidden'>
-                        <motion.button whileHover={{ scale: 1.05 }} className={`${disabled === true ? ` w-[90%] pointer-events-none opacity-50 bg-gray-300 cursor-not-allowed font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2` : `  bg-white text-gray-900  w-[90%] hover:text-white border-gray-300 focus:outline-none hover:bg-black focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2`}`} onClick={(e)=>addCart(e)} handleClick={handleClick}>Add Cart</motion.button>
+                        <motion.button whileHover={{ scale: 1.05 }} className={`${disabled === true ? ` w-[90%] pointer-events-none opacity-50 bg-gray-300 cursor-not-allowed font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2` : `  bg-white text-gray-900  w-[90%] hover:text-white border-gray-300 focus:outline-none hover:bg-black focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2`}`} onClick={(e)=>addCart(e)}>Add Cart</motion.button>
                     </div>
                 </div>
             </main>
