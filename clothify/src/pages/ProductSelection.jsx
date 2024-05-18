@@ -195,14 +195,15 @@ const ProductSelection = () => {
                         })
                     } else {
                         setData(prev => {
-                            console.log(res.data[0].qty)
+                            console.log(res.data.qty)
                             return {
                                 ...prev,
-                                price: res.data[0].price,
+                                price: res.data.price,
                                 qty:res.data[0].qty
                             }
                         })
                     }
+                    
 
                     // if (res.data[0] === 'not valid') {
                     //     setStock(0)
@@ -305,6 +306,3 @@ const ProductSelection = () => {
 }
 
 export default ProductSelection
-
-
-

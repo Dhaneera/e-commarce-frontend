@@ -33,7 +33,6 @@ import winter from '../assets/winter.png';
 import women from '../assets/women.png';
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
 import { Link } from 'react-router-dom';
 import Transition from './components/Transition';
 import Navbar from './components/Navbar';
@@ -41,11 +40,6 @@ import { useState } from 'react';
 
 const Home=()=> {
     const[isOpen,setIsOpen]=useState(false);
-
-    
-    
-
-
 
     return (
         <div className='flex flex-col bg-[#FCFCF5]  dark:bg-black overflow-hidden  '>
