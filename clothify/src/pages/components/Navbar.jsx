@@ -6,6 +6,8 @@ import cart from '../../assets/Light Shopping Bag.png'
 import CartImage from "../../assets/cart.png"
 import Menu from '../../assets/Menu.png'
 import Image from '../../assets/logo.png'
+import { useDispatch } from "react-redux";
+import { setShow } from "../../states/Cart/CartSlice";
 
 
 
@@ -35,13 +37,18 @@ const Navbar = (props) => {
     return (
         <>
             <AnimatePresence>
-                {isScrolling ? (<NavbarScroll open={props.open} isScrolling={isScrolling} />) : (<NavbarFixed open={props.open}/>)}
+                {isScrolling ? (<NavbarScroll isScrolling={isScrolling} />) : (<NavbarFixed/>)}
             </AnimatePresence>
         </>
     );
 }
 
-function NavbarFixed(props) {
+function NavbarFixed() {
+    const dispatch=useDispatch();
+
+    function handleClick(){
+        
+    }
 
     const [hidden, setHidden] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
@@ -55,13 +62,6 @@ function NavbarFixed(props) {
             setHidden(false)
         }
     })
-
-    function handleClick() {
-        console.log("clicked");
-        props.open();
-    }
-
-
     return (
         <motion.Navbar variants={{
             visible: { y: 0 },
@@ -83,8 +83,8 @@ function NavbarFixed(props) {
                 <Link className='ml-0' to='/home'><motion.img whileHover={{ scale: 1.2 }} src={Image} className="w-40 p-3" alt="logo" /></Link>
             </div>
             <div className="flex w-1/3 justify-end items-center p-5 gap-5 max-lg:hidden dark:text-white mr-5 text " >
-                <motion.img whileHover={{ scale: 1.5 }} src={cart} className={` size-5 hidden dark:flex `} onClick={handleClick} alt="" />
-                <motion.img whileHover={{ scale: 1.5 }} src={CartImage} className='h-6 mr-4 dark:hidden' onClick={handleClick} alt='cart' />
+                <motion.img whileHover={{ scale: 1.5 }} src={cart} className={` size-5 hidden dark:flex `} onClick={()=>dispatch(setShow())} alt="" />
+                <motion.img whileHover={{ scale: 1.5 }} src={CartImage} className='h-6 mr-4 dark:hidden' onClick={()=>dispatch(setShow())} alt='cart' />
                 <motion.p whileHover={{ scale: 1.2 }} className='mr-4 hover:underline'><Link to='/'>Sign in</Link></motion.p>
             </div>
             <div className='lg:hidden p-5  '>
@@ -102,11 +102,7 @@ function NavbarScroll(props) {
 
     const [hidden, setHidden] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
-
-
-    function handleClick() {
-        props.open();
-    }
+    const dispatch=useDispatch();
 
     return (
         
@@ -127,8 +123,8 @@ function NavbarScroll(props) {
                 <motion.li whileHover={{ scale: 1.2 }} className=" px-4 py-3 text-md hover:border border-black rounded-full  dark:hover:border  dark:border-gray-400 dark:rounded-full"><Link to='/subCategories'>SubCategories</Link></motion.li>
             </ul>
             <ul className="  ml-8 flex items-center justify-center w-[20rem] gap-5 border border-white bg-[#F4F4DC]  px-12 text-xs   text-black rounded-full dark:bg-[#18191b] dark:text-white max-lg:hidden">
-                    <motion.img whileHover={{ scale: 1.5 }} src={cart} className={` ml-1 size-6 hidden dark:flex`} onClick={handleClick} alt="" />
-                    <motion.img whileHover={{ scale: 1.5 }} src={CartImage} className=' ml-1 dark:hidden' onClick={handleClick}alt='cart' />
+                    <motion.img whileHover={{ scale: 1.5 }} src={cart} className={` ml-1 size-6 hidden dark:flex`} onClick={()=>dispatch(setShow())} alt="" />
+                    <motion.img whileHover={{ scale: 1.5 }} src={CartImage} className=' ml-1 dark:hidden' onClick={(()=>dispatch(setShow()))}alt='cart' />
                     <motion.p whileHover={{ scale: 1.2 }} className='px-3 py-3 items-center justify-center flextext-md hover:border border-black rounded-full  dark:hover:border  dark:border-gray-400 dark:rounded-full '><Link to='/'>Sign in</Link></motion.p>
             </ul>
         </motion.nav>

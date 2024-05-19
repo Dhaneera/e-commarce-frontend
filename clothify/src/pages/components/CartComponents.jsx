@@ -25,8 +25,6 @@ const CartComponents = (props) => {
     //     }
     // }
 
-
-
     function addItem(e) {
         const url=`http://localhost:8080/cart/update/add/${props.item.id}`
         console.log(props.item.qty);
@@ -37,13 +35,11 @@ const CartComponents = (props) => {
                     alert("out of stock")
             }else{
                 axios.put(url).then(()=>{
-
                 })
             }
 
         })
     }
-    
     function subItems(e) {
         const url=`http://localhost:8080/cart/update/sub/${props.item.id}`
             if (props.item.qty>1) {
@@ -54,7 +50,6 @@ const CartComponents = (props) => {
                 alert("no stock use bin to remove")
             }
     }
-
 
     function handleDelete(e) {
         const url =`http://localhost:8080/cart/delete/${props.item.id}`
@@ -84,6 +79,8 @@ const CartComponents = (props) => {
                 </div>
             </div>
         </div>
-        )
+    )
 }
 export default CartComponents
+
+
