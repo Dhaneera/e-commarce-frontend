@@ -56,8 +56,9 @@ const ProductSelection = () => {
         price: 0,
         stockId: 0
     })
+   
 
-    function addCart(e) {
+    function addCart (e) {
         if (!isSelectColor && !isSelectSize) {
             setErrorMessage("choose options to proceed ")
             setIsSelectColor(null)
@@ -80,14 +81,15 @@ const ProductSelection = () => {
                 ]
             })
             setErrorMessage("")
-            const url='	http://localhost:8080/cart/add'
+            const url='	http://localhost:8080/cart/add';
             axios.post(url,{
-                id:0,
+            
                 stock:{id:formData.id},
                 qty:formData.qty,
-                productTot: formData.productTot,
+                productTot: formData.total,
                 completed:false,
                 customer:{id:1}
+
             }).then(res=>{
                 console.log("status came out correct")
             })
@@ -135,6 +137,8 @@ const ProductSelection = () => {
 
     // }
 
+    
+
     const toggleColor = (colorName) => {
         setIsSelectColor((prevIsSelectColor) => {
             return prevIsSelectColor === colorName ? null : colorName
@@ -142,13 +146,18 @@ const ProductSelection = () => {
     }
 
 
+    console.log(formData);
     function add(params) {
-        setFormData((prev) => {
+
+        setFormData((prev) => {            
             return {
                 ...prev,
                 qty: prev.qty + 1
+                
             }
+
         })
+
         setCount(prevCount => prevCount + 1)
         let t = formData.price * (formData.qty + 1);
         setFormData((prev) => {
@@ -161,12 +170,15 @@ const ProductSelection = () => {
 
 
     function sub(params) {
+
         if (count > 1) {
             setFormData((prev) => {
                 return {
                     ...prev,
                     qty: prev.qty - 1
+                    
                 }
+               
             })
             setCount(prevCount => prevCount - 1)
             let t = formData.price * (formData.qty - 1);
@@ -184,7 +196,6 @@ const ProductSelection = () => {
 
             let promise = axios.get(`http://localhost:8080/stock/get?size=${e.target.name}&id=${data.id}`)
                 .then((res) => {
-                    console.log(res.data)
                     if (res.data[0] == "not valid") {
                         setData((prev) => {
                             return {
@@ -195,52 +206,35 @@ const ProductSelection = () => {
                         })
                     } else {
                         setData(prev => {
-                            console.log(res.data.qty)
+
                             return {
                                 ...prev,
-                                price: res.data.price,
+                                price: res.data[0].price,
                                 qty:res.data[0].qty
+                            }
+                        })
+                        setFormData((prev)=>{
+                            return {
+                                id: res.data[0].id,
+                                qty:formData.price,
+                                size: res.data[0].size,
+                                price: res.data[0].price,
+                                stockId: res.data[0].id,
+                                productTot:res.data[0].price
                             }
                         })
                     }
                     
 
-                    // if (res.data[0] === 'not valid') {
-                    //     setStock(0)
-                    //     setIsDisabled(true)
-                    //     setData((prevState) => {
-                    //         return {
-                    //             ...prevState,
-                    //         }
-                    //     })
-                    // } else {
-                    //     setStock(data[0].qty)
-                    //     setData((prevState) => {
-                    //         return {
-                    //             ...prevState,
-                    //             price: res.data[0].price
-                    //         }
-                    //     })
-                    //     setFormData((prev) => {
-                    //         return {
-                    //             ...prev,
-                    //             size: res.data[0].size,
-                    //             price: res.data[0].price,
-                    //             stockId: res.data[0].id,
-                    //             total: res.data[0].price
-                    //         }
-                    //     })
-                    //     setIsDisabled(false)
-                    // }
                 })
 
             return prevIsisSelectSizeSize === preferSize ? null : preferSize
         })
     }
-    // useEffect(() => {
-    // }, [isSelectSize])
-    // useEffect(() => {
-    // }, [isSelectColor])
+    useEffect(() => {
+    }, [isSelectSize])
+    useEffect(() => {
+    }, [isSelectColor])
 
     return (
         <div className=' flex flex-col bg-[#FCFCF5]   dark:bg-black p-0 m-0' >
@@ -281,7 +275,7 @@ const ProductSelection = () => {
 
                     <div className='flex  p-5 justify-center max-md:gap-3 gap-5 max-md:hidden '>
 
-                        <motion.img whileHover={{ scale: 1.15 }} className=' size-10  hover:size-11 border-none  dark:hidden' onClick={add} src={addLight} alt="" />
+                        <motion.img whileHover={{ scale: 1.15 }} className={` ${disabled === true ? `pointer-events-none  size-10 `:`size-10  hover:size-11 border-none `}`}  onClick={add} src={addLight} alt="" />
                         <motion.img whileHover={{ scale: 1.15 }} className=' size-10  hover:size-11 border-none hidden dark:flex' onClick={add} src={addDark} alt="" />
                         <span className='size-10  w-14 text-lg  p-2 ml-1  bg-white pl-5 pb-9 dark:text-white dark:bg-black'>{count}</span>
                         <motion.img whileHover={{ scale: 1.15 }} className=' size-10  hover:size-11 dark:hidden' onClick={sub} src={minusLight} alt="" />
@@ -306,3 +300,8 @@ const ProductSelection = () => {
 }
 
 export default ProductSelection
+
+
+
+
+

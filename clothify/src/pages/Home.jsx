@@ -47,14 +47,13 @@ const Home=()=> {
             <div className=' fixed w-[100%] h-[5rem] bg-[#FCFCF5] dark:fixed dark:bg-black z-50 '>
             <Navbar/>
             </div>
-        
 
             <motion.main animate={{ scale:1}} transition={{ type: "spring", duration: 2 }} initial={{ scale: 0 }} className={`flex flex-col items-center justify-center   p-0  mt-44 max-md:mt-32 max-md:p-18  max-xl:mt-10 max-xl:p-14 max-2xl:p-20 max-2xl:mt-16 2xl:p-32  ${show==true?` overflow-hidden`:` overflow-scroll`} `}>
-                <div className=" f w-[100%]  justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-[-14%] scrollbar-thin over ">
+                <div className=" f w-[100%]  justify-end  overflow-y-hidden mb-12 mt-0 max-sm:p-7 max-lg:p-12 max-xl:p-16  2xl:mt-[-14%] scrollbar-thin over z-50  ">
                     <div  className=" 2xl:mt-10 pt-0 ">
                         <img src={start} alt="" />
                     </div>
-                    <div className={`w-[100%] h-[100%]  mt-[-66%] xl:mt-[-72%] xl:ml-[5%] p-0 max-2xl:mt[-70%] mr-10 fixed ${show?`fixed`:`hidden`}`}>
+                    <div className={`w-[80%]  xl:mt-[-72%] xl:ml-[18%] p-0 max-2xl:mt[-70%] mr-10 fixed ${show?`fixed`:`hidden`}`}>
                         <Cart />
                     </div>
                 </div>

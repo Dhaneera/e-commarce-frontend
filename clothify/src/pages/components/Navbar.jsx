@@ -124,7 +124,9 @@ function NavbarScroll(props) {
             </ul>
             <ul className="  ml-8 flex items-center justify-center w-[20rem] gap-5 border border-white bg-[#F4F4DC]  px-12 text-xs   text-black rounded-full dark:bg-[#18191b] dark:text-white max-lg:hidden">
                     <motion.img whileHover={{ scale: 1.5 }} src={cart} className={` ml-1 size-6 hidden dark:flex`} onClick={()=>dispatch(setShow())} alt="" />
-                    <motion.img whileHover={{ scale: 1.5 }} src={CartImage} className=' ml-1 dark:hidden' onClick={(()=>dispatch(setShow()))}alt='cart' />
+                    <motion.img whileHover={{ scale: 1.5 }} src={CartImage} className=' ml-1 dark:hidden' onClick={(()=>dispatch(setShow((prev)=>{
+                        return !prev
+                    })))}alt='cart' />
                     <motion.p whileHover={{ scale: 1.2 }} className='px-3 py-3 items-center justify-center flextext-md hover:border border-black rounded-full  dark:hover:border  dark:border-gray-400 dark:rounded-full '><Link to='/'>Sign in</Link></motion.p>
             </ul>
         </motion.nav>

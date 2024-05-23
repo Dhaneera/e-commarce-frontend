@@ -25,6 +25,7 @@ const CartComponents = (props) => {
     //     }
     // }
 
+
     function addItem(e) {
         const url=`http://localhost:8080/cart/update/add/${props.item.id}`
         console.log(props.item.qty);
@@ -35,6 +36,7 @@ const CartComponents = (props) => {
                     alert("out of stock")
             }else{
                 axios.put(url).then(()=>{
+                    
                 })
             }
 
